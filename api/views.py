@@ -6,3 +6,4 @@ from rest_framework.decorators import api_view
 def test_data(request):
     person = {'name':'Ridwan Halim', 'age':20}
     return Response(person)
+# https://api-frontend.kemdikbud.go.id/hit_mhs/ridwan%20halim%20uty
