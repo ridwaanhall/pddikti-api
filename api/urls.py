@@ -38,4 +38,5 @@ urlpatterns = [
     path('statistik/column/mhsbidang/', views.statistik_column_mhsbidang),
     path('statistik/column/dsnklmn/', views.statistik_column_dsnklmn),
     path('statistik/column/dsnik/', views.statistik_column_dsnik),
+    path('statistik/column/dsnpt/', views.statistik_column_dsnpt),
 ]
