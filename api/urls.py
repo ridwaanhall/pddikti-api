@@ -36,4 +36,6 @@ urlpatterns = [
     path('v2/detail_pt_prodi/<str:detail_pt_prodi_v2>/', views.detail_pt_prodi_v2),
     path('v2/detail_pt_jumlah/', views.error_404),
     path('v2/detail_pt_jumlah/<str:detail_pt_jumlah_v2>/', views.detail_pt_jumlah_v2),
+    path('v2/detail_pt_dosen/', views.error_404),
+    path('v2/detail_pt_dosen/<str:detail_pt_dosen_v2>/', views.detail_pt_dosen_v2),
 ]
