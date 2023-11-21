@@ -26,10 +26,10 @@ def error_404(request):
 
 # ============= mahasiswa ==================
 
-@api_view(['GET'])
-def hit_mhs_404(request):
-    msg = {'message': '404 Not Found'}
-    return Response(msg, status=status.HTTP_404_NOT_FOUND)
+# @api_view(['GET'])
+# def hit_mhs_404(request):
+#     msg = {'message': '404 Not Found'}
+#     return Response(msg, status=status.HTTP_404_NOT_FOUND)
 
 @api_view(['GET'])
 def hit_mhs(request, hit_mhs):  # Added the hit_mhs parameter
@@ -49,10 +49,10 @@ def hit_mhs(request, hit_mhs):  # Added the hit_mhs parameter
         msg = {'message': 'Failed to fetch data'}
         return Response(msg, status=response.status_code)
 
-@api_view(['GET'])
-def detail_mhs_404(request):
-    msg = {'message': '404 Not Found'}
-    return Response(msg, status=status.HTTP_404_NOT_FOUND)
+# @api_view(['GET'])
+# def detail_mhs_404(request):
+#     msg = {'message': '404 Not Found'}
+#     return Response(msg, status=status.HTTP_404_NOT_FOUND)
 
 @api_view(['GET'])
 def detail_mhs(request, detail_mhs):  # Added the detail_mhs parameter
@@ -74,10 +74,10 @@ def detail_mhs(request, detail_mhs):  # Added the detail_mhs parameter
 
 # ============== dosen, prodi, pt ==============
 
-@api_view(['GET'])
-def hit_404(request):
-    msg = {'message': '404 Not Found'}
-    return Response(msg, status=status.HTTP_404_NOT_FOUND)
+# @api_view(['GET'])
+# def hit_404(request):
+#     msg = {'message': '404 Not Found'}
+#     return Response(msg, status=status.HTTP_404_NOT_FOUND)
 
 @api_view(['GET'])
 def hit(request, hit):  # Added the hit_mhs parameter
@@ -98,10 +98,10 @@ def hit(request, hit):  # Added the hit_mhs parameter
         return Response(msg, status=response.status_code)
 
 # detail dosen
-@api_view(['GET'])
-def detail_dosen_404(request):
-    msg = {'message': '404 Not Found'}
-    return Response(msg, status=status.HTTP_404_NOT_FOUND)
+# @api_view(['GET'])
+# def detail_dosen_404(request):
+#     msg = {'message': '404 Not Found'}
+#     return Response(msg, status=status.HTTP_404_NOT_FOUND)
 
 @api_view(['GET'])
 def detail_dosen(request, detail_dosen):  # Added the detail_mhs parameter
@@ -122,10 +122,10 @@ def detail_dosen(request, detail_dosen):  # Added the detail_mhs parameter
 
 
 # detail prodi (detail of prodi using id of prodi)
-@api_view(['GET'])
-def detail_prodi_404(request):
-    msg = {'message': '404 Not Found'}
-    return Response(msg, status=status.HTTP_404_NOT_FOUND)
+# @api_view(['GET'])
+# def detail_prodi_404(request):
+#     msg = {'message': '404 Not Found'}
+#     return Response(msg, status=status.HTTP_404_NOT_FOUND)
 
 @api_view(['GET'])
 def detail_prodi(request, detail_prodi):  # Added the detail_mhs parameter
@@ -145,10 +145,10 @@ def detail_prodi(request, detail_prodi):  # Added the detail_mhs parameter
         return Response(msg, status=response.status_code)
 
 # detail prodi (undifined. detail of prodi using id of prodi)
-@api_view(['GET'])
-def detail_prodi_undifined_404(request):
-    msg = {'message': '404 Not Found'}
-    return Response(msg, status=status.HTTP_404_NOT_FOUND)
+# @api_view(['GET'])
+# def detail_prodi_undifined_404(request):
+#     msg = {'message': '404 Not Found'}
+#     return Response(msg, status=status.HTTP_404_NOT_FOUND)
 
 @api_view(['GET'])
 def detail_prodi_undifined(request, detail_prodi_undifined):  # Added the detail_mhs parameter
@@ -168,10 +168,10 @@ def detail_prodi_undifined(request, detail_prodi_undifined):  # Added the detail
         return Response(msg, status=response.status_code)
 
 # detail pt
-@api_view(['GET'])
-def detail_pt_404(request):
-    msg = {'message': '404 Not Found'}
-    return Response(msg, status=status.HTTP_404_NOT_FOUND)
+# @api_view(['GET'])
+# def detail_pt_404(request):
+#     msg = {'message': '404 Not Found'}
+#     return Response(msg, status=status.HTTP_404_NOT_FOUND)
 
 @api_view(['GET'])
 def detail_pt(request, detail_pt):  # Added the detail_mhs parameter
