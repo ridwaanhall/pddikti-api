@@ -20,4 +20,8 @@ urlpatterns = [
     path('hit/<str:hit>/', views.hit),
     path('detail_dosen/', views.detail_dosen_404),
     path('detail_dosen/<str:detail_dosen>/', views.detail_dosen),
+    path('detail_prodi/', views.detail_prodi_404),
+    path('detail_prodi/<str:detail_prodi>/', views.detail_prodi),
+    path('detail_prodi_undifined/', views.detail_prodi_undifined_404),
+    path('detail_prodi_undifined/<str:detail_prodi_undifined>/', views.detail_prodi_undifined),
 ]
