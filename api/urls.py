@@ -26,4 +26,6 @@ urlpatterns = [
     path('detail_prodi_undifined/<str:detail_prodi_undifined>/', views.detail_prodi_undifined),
     path('detail_pt/', views.error_404),
     path('detail_pt/<str:detail_pt>/', views.detail_pt),
+    path('stat_pt/', views.error_404),
+    path('stat_pt/<str:stat_pt>/', views.stat_pt),
 ]
