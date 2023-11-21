@@ -24,4 +24,6 @@ urlpatterns = [
     path('detail_prodi/<str:detail_prodi>/', views.detail_prodi),
     path('detail_prodi_undifined/', views.detail_prodi_undifined_404),
     path('detail_prodi_undifined/<str:detail_prodi_undifined>/', views.detail_prodi_undifined),
+    path('detail_pt/', views.detail_pt_404),
+    path('detail_pt/<str:detail_pt>/', views.detail_pt),
 ]

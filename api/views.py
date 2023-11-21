@@ -166,3 +166,26 @@ def detail_prodi_undifined(request, detail_prodi_undifined):  # Added the detail
         # If the request was not successful, return an message response
         msg = {'message': 'Failed to fetch data'}
         return Response(msg, status=response.status_code)
+
+# detail pt
+@api_view(['GET'])
+def detail_pt_404(request):
+    msg = {'message': '404 Not Found'}
+    return Response(msg, status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['GET'])
+def detail_pt(request, detail_pt):  # Added the detail_mhs parameter
+    # Construct the URL with the dynamic parameter
+    url = f'https://api-frontend.kemdikbud.go.id/detail_pt/{detail_pt}'
+    # Make a GET request to the specified URL
+    response = requests.get(url)
+    
+    # Check if the request was successful (status code 200)
+    if response.status_code == 200:
+        # Parse the response content as JSON
+        data = response.json()
+        return Response(data, status=status.HTTP_200_OK)
+    else:
+        # If the request was not successful, return an message response
+        msg = {'message': 'Failed to fetch data'}
+        return Response(msg, status=response.status_code)
