@@ -123,3 +123,15 @@ def detail_pt_v2(request, detail_pt_v2):
     else:
         msg = {'message': 'Failed to fetch data'}
         return Response(msg, status=response.status_code)
+
+# v2/detail_pt_prodi
+@api_view(['GET'])
+def detail_pt_prodi_v2(request, detail_pt_prodi_v2):
+    url = f'https://api-frontend.kemdikbud.go.id/v2/detail_pt_prodi/{detail_pt_prodi_v2}'
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        return Response(data, status=status.HTTP_200_OK)
+    else:
+        msg = {'message': 'Failed to fetch data'}
+        return Response(msg, status=response.status_code)
