@@ -1,191 +1,112 @@
-# from rest_framework.response import Response
-# from rest_framework.decorators import api_view
-# from rest_framework import status
-
-# # @api_view(['GET'])
-# # def test_data(request):
-# #     person = {'name':'Ridwan Halim', 'age':20}
-# #     return Response(person)
-# # https://api-frontend.kemdikbud.go.id/hit_mhs/ridwan%20halim%20uty
-
-# @api_view(['GET'])
-# def error_404(request):
-#     msg = {'message': '404 Not Found'}
-#     return Response(msg,status=status.HTTP_404_NOT_FOUND)
-
 # api/views.py
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
-import requests  # Import the requests module
+import requests
 
 @api_view(['GET'])
 def error_404(request):
     msg = {'message': '404 Not Found'}
     return Response(msg, status=status.HTTP_404_NOT_FOUND)
 
+'''
+notice: mhs_id not same as nim.
+'''
+
 # ============= mahasiswa ==================
-
-# @api_view(['GET'])
-# def hit_mhs_404(request):
-#     msg = {'message': '404 Not Found'}
-#     return Response(msg, status=status.HTTP_404_NOT_FOUND)
-
+# search hit mhs (using name/nim/college/combination of that)
 @api_view(['GET'])
-def hit_mhs(request, hit_mhs):  # Added the hit_mhs parameter
-    # Construct the URL with the dynamic parameter
+def hit_mhs(request, hit_mhs):
     url = f'https://api-frontend.kemdikbud.go.id/hit_mhs/{hit_mhs}'
-
-    # Make a GET request to the specified URL
     response = requests.get(url)
-
-    # Check if the request was successful (status code 200)
     if response.status_code == 200:
-        # Parse the response content as JSON
         data = response.json()
         return Response(data, status=status.HTTP_200_OK)
     else:
-        # If the request was not successful, return an message response
         msg = {'message': 'Failed to fetch data'}
         return Response(msg, status=response.status_code)
 
-# @api_view(['GET'])
-# def detail_mhs_404(request):
-#     msg = {'message': '404 Not Found'}
-#     return Response(msg, status=status.HTTP_404_NOT_FOUND)
-
+# detail mhs (using mhs id)
 @api_view(['GET'])
-def detail_mhs(request, detail_mhs):  # Added the detail_mhs parameter
-    # Construct the URL with the dynamic parameter
+def detail_mhs(request, detail_mhs):
     url = f'https://api-frontend.kemdikbud.go.id/detail_mhs/{detail_mhs}'
-
-    # Make a GET request to the specified URL
     response = requests.get(url)
-
-    # Check if the request was successful (status code 200)
     if response.status_code == 200:
-        # Parse the response content as JSON
         data = response.json()
         return Response(data, status=status.HTTP_200_OK)
     else:
-        # If the request was not successful, return an message response
         msg = {'message': 'Failed to fetch data'}
         return Response(msg, status=response.status_code)
 
-# ============== dosen, prodi, pt ==============
-
-# @api_view(['GET'])
-# def hit_404(request):
-#     msg = {'message': '404 Not Found'}
-#     return Response(msg, status=status.HTTP_404_NOT_FOUND)
-
+# ============== dosen, prodi, pt ===============
+# search hit (dosen, prodi, and pt)
 @api_view(['GET'])
-def hit(request, hit):  # Added the hit_mhs parameter
-    # Construct the URL with the dynamic parameter
+def hit(request, hit):
     url = f'https://api-frontend.kemdikbud.go.id/hit/{hit}'
-
-    # Make a GET request to the specified URL
     response = requests.get(url)
-
-    # Check if the request was successful (status code 200)
     if response.status_code == 200:
-        # Parse the response content as JSON
         data = response.json()
         return Response(data, status=status.HTTP_200_OK)
     else:
-        # If the request was not successful, return an message response
         msg = {'message': 'Failed to fetch data'}
         return Response(msg, status=response.status_code)
 
 # detail dosen
-# @api_view(['GET'])
-# def detail_dosen_404(request):
-#     msg = {'message': '404 Not Found'}
-#     return Response(msg, status=status.HTTP_404_NOT_FOUND)
-
 @api_view(['GET'])
-def detail_dosen(request, detail_dosen):  # Added the detail_mhs parameter
-    # Construct the URL with the dynamic parameter
+def detail_dosen(request, detail_dosen):
     url = f'https://api-frontend.kemdikbud.go.id/detail_dosen/{detail_dosen}'
-    # Make a GET request to the specified URL
     response = requests.get(url)
-    
-    # Check if the request was successful (status code 200)
     if response.status_code == 200:
-        # Parse the response content as JSON
         data = response.json()
         return Response(data, status=status.HTTP_200_OK)
     else:
-        # If the request was not successful, return an message response
         msg = {'message': 'Failed to fetch data'}
         return Response(msg, status=response.status_code)
 
-
 # detail prodi (detail of prodi using id of prodi)
-# @api_view(['GET'])
-# def detail_prodi_404(request):
-#     msg = {'message': '404 Not Found'}
-#     return Response(msg, status=status.HTTP_404_NOT_FOUND)
-
 @api_view(['GET'])
-def detail_prodi(request, detail_prodi):  # Added the detail_mhs parameter
-    # Construct the URL with the dynamic parameter
+def detail_prodi(request, detail_prodi):
     url = f'https://api-frontend.kemdikbud.go.id/detail_prodi/{detail_prodi}'
-    # Make a GET request to the specified URL
     response = requests.get(url)
-    
-    # Check if the request was successful (status code 200)
     if response.status_code == 200:
-        # Parse the response content as JSON
         data = response.json()
         return Response(data, status=status.HTTP_200_OK)
     else:
-        # If the request was not successful, return an message response
         msg = {'message': 'Failed to fetch data'}
         return Response(msg, status=response.status_code)
 
 # detail prodi (undifined. detail of prodi using id of prodi)
-# @api_view(['GET'])
-# def detail_prodi_undifined_404(request):
-#     msg = {'message': '404 Not Found'}
-#     return Response(msg, status=status.HTTP_404_NOT_FOUND)
-
 @api_view(['GET'])
-def detail_prodi_undifined(request, detail_prodi_undifined):  # Added the detail_mhs parameter
-    # Construct the URL with the dynamic parameter
+def detail_prodi_undifined(request, detail_prodi_undifined):
     url = f'https://api-frontend.kemdikbud.go.id/detail_prodi/{detail_prodi_undifined}/undifined'
-    # Make a GET request to the specified URL
     response = requests.get(url)
-    
-    # Check if the request was successful (status code 200)
     if response.status_code == 200:
-        # Parse the response content as JSON
         data = response.json()
         return Response(data, status=status.HTTP_200_OK)
     else:
-        # If the request was not successful, return an message response
         msg = {'message': 'Failed to fetch data'}
         return Response(msg, status=response.status_code)
 
 # detail pt
-# @api_view(['GET'])
-# def detail_pt_404(request):
-#     msg = {'message': '404 Not Found'}
-#     return Response(msg, status=status.HTTP_404_NOT_FOUND)
-
 @api_view(['GET'])
-def detail_pt(request, detail_pt):  # Added the detail_mhs parameter
-    # Construct the URL with the dynamic parameter
+def detail_pt(request, detail_pt):
     url = f'https://api-frontend.kemdikbud.go.id/detail_pt/{detail_pt}'
-    # Make a GET request to the specified URL
     response = requests.get(url)
-    
-    # Check if the request was successful (status code 200)
     if response.status_code == 200:
-        # Parse the response content as JSON
         data = response.json()
         return Response(data, status=status.HTTP_200_OK)
     else:
-        # If the request was not successful, return an message response
+        msg = {'message': 'Failed to fetch data'}
+        return Response(msg, status=response.status_code)
+
+# stat pt
+@api_view(['GET'])
+def stat_pt(request, stat_pt):
+    url = f'https://api-frontend.kemdikbud.go.id/stat_pt/{stat_pt}'
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        return Response(data, status=status.HTTP_200_OK)
+    else:
         msg = {'message': 'Failed to fetch data'}
         return Response(msg, status=response.status_code)
