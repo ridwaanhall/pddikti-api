@@ -121,7 +121,7 @@ def detail_dosen(request, detail_dosen):  # Added the detail_mhs parameter
         return Response(msg, status=response.status_code)
 
 
-# detail prodi
+# detail prodi (detail of prodi using id of prodi)
 @api_view(['GET'])
 def detail_prodi_404(request):
     msg = {'message': '404 Not Found'}
@@ -144,7 +144,7 @@ def detail_prodi(request, detail_prodi):  # Added the detail_mhs parameter
         msg = {'message': 'Failed to fetch data'}
         return Response(msg, status=response.status_code)
 
-# detail prodi (undifined)
+# detail prodi (undifined. detail of prodi using id of prodi)
 @api_view(['GET'])
 def detail_prodi_undifined_404(request):
     msg = {'message': '404 Not Found'}
