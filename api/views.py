@@ -159,3 +159,16 @@ def detail_pt_dosen_v2(request, detail_pt_dosen_v2):
     else:
         msg = {'message': 'Failed to fetch data'}
         return Response(msg, status=response.status_code)
+
+# =========== statistik/column =============
+# statistik/column/mhsklmn
+@api_view(['GET'])
+def statistik_column_mhsklmn(request):
+    url = 'https://api-frontend.kemdikbud.go.id/statistik/column/mhsklmn'
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        return Response(data, status=status.HTTP_200_OK)
+    else:
+        msg = {'message': 'Failed to fetch data'}
+        return Response(msg, status=response.status_code)
