@@ -220,3 +220,27 @@ def statistik_column_dsnpt(request):
     else:
         msg = {'message': 'Failed to fetch data'}
         return Response(msg, status=response.status_code)
+
+# statistik/column/prodi
+@api_view(['GET'])
+def statistik_column_prodi(request):
+    url = 'https://api-frontend.kemdikbud.go.id/statistik/column/prodi'
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        return Response(data, status=status.HTTP_200_OK)
+    else:
+        msg = {'message': 'Failed to fetch data'}
+        return Response(msg, status=response.status_code)
+
+# statistik/column/pt
+@api_view(['GET'])
+def statistik_column_pt(request):
+    url = 'https://api-frontend.kemdikbud.go.id/statistik/column/pt'
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        return Response(data, status=status.HTTP_200_OK)
+    else:
+        msg = {'message': 'Failed to fetch data'}
+        return Response(msg, status=response.status_code)

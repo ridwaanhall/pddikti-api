@@ -39,4 +39,6 @@ urlpatterns = [
     path('statistik/column/dsnklmn/', views.statistik_column_dsnklmn),
     path('statistik/column/dsnik/', views.statistik_column_dsnik),
     path('statistik/column/dsnpt/', views.statistik_column_dsnpt),
+    path('statistik/column/prodi/', views.statistik_column_prodi),
+    path('statistik/column/pt/', views.statistik_column_pt),
 ]
