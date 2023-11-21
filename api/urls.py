@@ -28,4 +28,8 @@ urlpatterns = [
     path('detail_pt/<str:detail_pt>/', views.detail_pt),
     path('stat_pt/', views.error_404),
     path('stat_pt/<str:stat_pt>/', views.stat_pt),
+
+    # v2
+    path('v2/detail_pt/', views.error_404),
+    path('v2/detail_pt/<str:detail_pt_v2>/', views.detail_pt_v2),
 ]
