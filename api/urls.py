@@ -36,5 +36,6 @@ urlpatterns = [
     path('statistik/column/', views.error_404),
     path('statistik/column/mhsklmn/', views.statistik_column_mhsklmn),
     path('statistik/column/mhsbidang/', views.statistik_column_mhsbidang),
-    path('statistik/column/mhsprodi/', views.statistik_column_dsnklmn),
+    path('statistik/column/dsnklmn/', views.statistik_column_dsnklmn),
+    path('statistik/column/dsnik/', views.statistik_column_dsnik),
 ]
