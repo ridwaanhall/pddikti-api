@@ -35,4 +35,5 @@ urlpatterns = [
     path('statistik/', views.error_404),
     path('statistik/column/', views.error_404),
     path('statistik/column/mhsklmn/', views.statistik_column_mhsklmn),
+    path('statistik/column/mhsbidang/', views.statistik_column_mhsbidang),
 ]

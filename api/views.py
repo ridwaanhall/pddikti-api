@@ -172,3 +172,15 @@ def statistik_column_mhsklmn(request):
     else:
         msg = {'message': 'Failed to fetch data'}
         return Response(msg, status=response.status_code)
+
+# statistik/column/mhsbidang
+@api_view(['GET'])
+def statistik_column_mhsbidang(request):
+    url = 'https://api-frontend.kemdikbud.go.id/statistik/column/mhsbidang'
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        return Response(data, status=status.HTTP_200_OK)
+    else:
+        msg = {'message': 'Failed to fetch data'}
+        return Response(msg, status=response.status_code)
