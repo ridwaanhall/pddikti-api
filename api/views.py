@@ -96,3 +96,26 @@ def hit(request, hit):  # Added the hit_mhs parameter
         # If the request was not successful, return an message response
         msg = {'message': 'Failed to fetch data'}
         return Response(msg, status=response.status_code)
+
+# detail dosen
+@api_view(['GET'])
+def detail_dosen_404(request):
+    msg = {'message': '404 Not Found'}
+    return Response(msg, status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['GET'])
+def detail_dosen(request, detail_dosen):  # Added the detail_mhs parameter
+    # Construct the URL with the dynamic parameter
+    url = f'https://api-frontend.kemdikbud.go.id/detail_dosen/{detail_dosen}'
+    # Make a GET request to the specified URL
+    response = requests.get(url)
+    
+    # Check if the request was successful (status code 200)
+    if response.status_code == 200:
+        # Parse the response content as JSON
+        data = response.json()
+        return Response(data, status=status.HTTP_200_OK)
+    else:
+        # If the request was not successful, return an message response
+        msg = {'message': 'Failed to fetch data'}
+        return Response(msg, status=response.status_code)

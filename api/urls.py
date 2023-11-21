@@ -18,4 +18,6 @@ urlpatterns = [
     path('detail_mhs/<str:detail_mhs>/', views.detail_mhs),
     path('hit/', views.hit_404),
     path('hit/<str:hit>/', views.hit),
+    path('detail_dosen/', views.detail_dosen_404),
+    path('detail_dosen/<str:detail_dosen>/', views.detail_dosen),
 ]
