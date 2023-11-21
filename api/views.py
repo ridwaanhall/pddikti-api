@@ -244,3 +244,16 @@ def statistik_column_pt(request):
     else:
         msg = {'message': 'Failed to fetch data'}
         return Response(msg, status=response.status_code)
+
+# ======= statistik/pie =======
+# statistik/pie/penmhs
+@api_view(['GET'])
+def statistik_pie_penmhs(request):
+    url = 'https://api-frontend.kemdikbud.go.id/statistik/pie/penmhs'
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        return Response(data, status=status.HTTP_200_OK)
+    else:
+        msg = {'message': 'Failed to fetch data'}
+        return Response(msg, status=response.status_code)
